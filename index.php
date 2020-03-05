@@ -17,7 +17,33 @@ require('header.php');
                 <div class="col-sm-8">
                     <div class="tab-content" id="v-pills-tabContent">
                     <?php if (isAdmin()) {?>
-                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <form action="includes/getshabacode.inc.php" method="post">
+                            <div class="form-group">
+                                <label for="shabacode">shabacode</label>
+                                <input type="text" class="form-control" id="shabacode" name="shabacode" placeholder="shabacode">
+                            </div>
+                            <button type="submit" class="btn btn-primary" name="shaba-submit">get info</button>
+                        </form>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">name</th>
+                                <th scope="col">account comment</th>
+                                <th scope="col">account number</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">1</th>
+                                <td><?php echo $_GET['Data']['AccountOwners'][0] ?></td>
+                                <td><?php echo $_GET['Data']['AccountComment']?></td>
+                                <td><?php echo $_GET['Data']['AccountNumber']?></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        </div>
                         <?php } ?>
                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
                     </div>
