@@ -11,8 +11,8 @@ function islogin(){
 
 function isAdmin(){
     // this funtcion to check login user is admin 
-    $username = $_SESSION['username'];
     global $conn;
+    $username = $_SESSION['username'];
     $stmt = $conn->prepare("SELECT * FROM `Users` WHERE `username` = '$username' ");
     $stmt->execute();
     $role = $stmt->fetchColumn(4);
@@ -21,4 +21,3 @@ function isAdmin(){
     }
     return false;
 }
-

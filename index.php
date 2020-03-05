@@ -1,4 +1,5 @@
-<?php 
+<?php
+require('includes/dbconnect.inc.php');
 require('header.php');
 
 ?>
@@ -45,7 +46,20 @@ require('header.php');
                         </table>
                         </div>
                         <?php } ?>
-                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                 <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">id</th>
+                                <th scope="col">name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="test">
+
+                             </tbody>
+                        </table>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,7 +68,7 @@ require('header.php');
 
         <p>for show option for you please login</p>
                     <?php  } ?>
-<?php 
+<?php
     require('footer.php');
 
 ?>
