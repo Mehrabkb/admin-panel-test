@@ -12,6 +12,6 @@
                 table.append('<tr> <td>' + field.id + '</td>'
                 +'<td>' + field.name+'</td> </tr>' )
               })
-        },
+s        },
   });
 });
