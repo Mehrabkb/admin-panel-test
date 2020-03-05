@@ -3,7 +3,6 @@ require('header.php');
 
 ?>
 
-    <main>
         <div class="container mt-4">
             <div class="row">
                 <div class="col-sm-4">
@@ -24,7 +23,7 @@ require('header.php');
                 </div>
             </div>
         </div>
-    </main>
+
 <?php 
     require('footer.php');
 

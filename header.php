@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    include('functions.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,23 +19,38 @@
                 <div class="col-lg-2">
                     Title Site
                 </div>
+                <?php if(islogin()){?>
+                <div class="col-lg-2">
+                    <a href="includes/logout.inc.php" class="btn btn-primary">logout</a>
+                </div>
+                <?php }else{ ?>
                 <div class="col-lg-8">
-                    <form class="form-inline" action="/action_page.php">
+                    <form class="form-inline" action="includes/login.inc.php" method="post">
+                        <?php if(isset($_GET['Error'])){ ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php 
+                                    $error = $_GET['Error'];
+                                    echo $error;
+                                ?>
+                            </div>
+                        <?php } ?>
                         <div class="form-group">
                             <label for="username">username:</label>
                             <input type="text" class="form-control" id="username" name="username">
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
+                            <input type="password" class="form-control" id="pwd" name="password">
                         </div>
-                        <button type="submit" class="btn btn-success">Login</button>
+                        <button type="submit" class="btn btn-success" name="login-submit">Login</button>
                     </form>
                 </div>
                 <div class="col-lg-2">
-                    <a href="" class="btn btn-primary">Sign Up</a>
+                    <a href="signup.php" class="btn btn-primary">Sign Up</a>
                 </div>
+                        <?php }?>
             </div>
         
         </div>
     </header>
+    <main>
